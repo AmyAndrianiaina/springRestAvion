@@ -24,7 +24,7 @@ import com.ws.crud.model.Avion;
 import com.ws.crud.repository.AvionRepository;
 
 
-@CrossOrigin(origins = { "http://localhost", "http://localhost:3000", "https://fluffy-marzipan-727cb3.netlify.app" })
+@CrossOrigin(origins = { "http://localhost", "http://localhost:3000", "https://fluffy-marzipan-727cb3.netlify.app", "https://fluffy-marzipan-727cb3.netlify.app/user", "https://fluffy-marzipan-727cb3.netlify.app/avions" })
 @RestController
 @RequestMapping("/rest/")
 public class AvionController {
