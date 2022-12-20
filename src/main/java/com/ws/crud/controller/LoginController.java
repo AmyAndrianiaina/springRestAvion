@@ -20,7 +20,7 @@ import com.ws.crud.repository.UserRepository;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
-@CrossOrigin(origins = { "http://localhost" })
+@CrossOrigin(origins = { "http://localhost", "http://localhost:3000", "https://springrestavion-production.up.railway.app" })
 @RestController
 public class LoginController {
 	

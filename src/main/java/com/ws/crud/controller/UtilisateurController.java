@@ -14,7 +14,7 @@ import com.ws.crud.exception.ResourceNotFoundException;
 import com.ws.crud.model.User;
 import com.ws.crud.repository.UserRepository;
 
-@CrossOrigin(origins = { "http://localhost" })
+@CrossOrigin(origins = { "http://localhost", "http://localhost:3000", "https://springrestavion-production.up.railway.app" })
 @RestController
 @RequestMapping("/rest/")
 public class UtilisateurController {

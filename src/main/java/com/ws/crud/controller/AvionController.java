@@ -24,7 +24,7 @@ import com.ws.crud.model.Avion;
 import com.ws.crud.repository.AvionRepository;
 
 
-@CrossOrigin(origins = { "http://localhost" })
+@CrossOrigin(origins = { "http://localhost", "http://localhost:3000", "https://springrestavion-production.up.railway.app" })
 @RestController
 @RequestMapping("/rest/")
 public class AvionController {
