@@ -23,7 +23,7 @@ import com.ws.crud.exception.ResourceNotFoundException;
 import com.ws.crud.model.Avion;
 import com.ws.crud.repository.AvionRepository;
 
-@CrossOrigin(origins = { "http://localhost", "http://localhost:3000", "https://fluffy-marzipan-727cb3.netlify.app" })
+@CrossOrigin(origins = { "http://localhost", "http://localhost:3000", "https://celebrated-zuccutto-82b407.netlify.app" })
 @RestController
 @RequestMapping("/rest/")
 public class AvionController {
