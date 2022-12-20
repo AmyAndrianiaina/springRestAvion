@@ -15,6 +15,12 @@ public class Avion {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	@Column(name = "numero")
+	private String numero;
+	@Column(name = "marque")
+	private String marque;
+	@Column(name = "model")
+	private String model;
 	@Column(name = "assurance")
 	private Date assurance;
 	@Column(name = "dateentretien")
@@ -26,8 +32,11 @@ public class Avion {
 		super();
 	}
 
-	public Avion(Date assurance, Date dateEntretien, int km) {
+	public Avion(Date assurance, Date dateEntretien, int km, String numero, String marque, String model) {
 		super();
+		this.numero = numero;
+		this.marque = marque;
+		this.model = model;
 		this.assurance = assurance;
 		this.dateEntretien = dateEntretien;
 		this.km = km;
@@ -41,6 +50,30 @@ public class Avion {
 		this.id = id;
 	}
 
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public String getMarque() {
+		return marque;
+	}
+
+	public void setMarque(String marque) {
+		this.marque = marque;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
 	public Date getAssurance() {
 		return assurance;
 	}
@@ -49,11 +82,11 @@ public class Avion {
 		this.assurance = assurance;
 	}
 
-	public Date getdateEntretien() {
+	public Date getDateEntretien() {
 		return dateEntretien;
 	}
 
-	public void setdateEntretien(Date dateEntretien) {
+	public void setDateEntretien(Date dateEntretien) {
 		this.dateEntretien = dateEntretien;
 	}
 

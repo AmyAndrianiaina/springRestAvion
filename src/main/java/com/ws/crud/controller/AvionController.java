@@ -23,16 +23,13 @@ import com.ws.crud.exception.ResourceNotFoundException;
 import com.ws.crud.model.Avion;
 import com.ws.crud.repository.AvionRepository;
 
-
-@CrossOrigin(origins = {"http://localhost", "http://localhost:3000", "https://fluffy-marzipan-727cb3.netlify.app"})
+@CrossOrigin(origins = { "http://localhost", "http://localhost:3000", "https://fluffy-marzipan-727cb3.netlify.app" })
 @RestController
 @RequestMapping("/rest/")
 public class AvionController {
 
 	@Autowired
 	private AvionRepository avionRepository;
-	
-	
 
 	public Date toDate(Date assurance) {
 		return assurance;
@@ -72,24 +69,24 @@ public class AvionController {
 		System.out.println(assurance2);
 		return this.avionRepository.findByAssuranceGreaterThanAndAssuranceLessThan(assurance1, assurance2);
 	}
-	
+
 	// get avion by assurance 3 mois
 
-		@GetMapping("/avions/assurance/3mois")
-		public List<Avion> getAvionByAssurence3Mois()
-				throws ResourceNotFoundException {
-			java.util.Date javaDate = new java.util.Date();
-			long javaTime = javaDate.getTime();
-			Date assurance1 = new Date(javaTime);
-			System.out.println(assurance1);
-			LocalDate date = LocalDate.parse(assurance1.toString());
-			LocalDate newDate = date.plusMonths(3);
-			java.util.Date dates = java.util.Date.from(newDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-			long javaTimes = dates.getTime();
-			Date assurance2 = new Date(javaTimes);
-			System.out.println(assurance2);
-			return this.avionRepository.findByAssuranceGreaterThanAndAssuranceLessThan(assurance1, assurance2);
-		}
+	@GetMapping("/avions/assurance/3mois")
+	public List<Avion> getAvionByAssurence3Mois()
+			throws ResourceNotFoundException {
+		java.util.Date javaDate = new java.util.Date();
+		long javaTime = javaDate.getTime();
+		Date assurance1 = new Date(javaTime);
+		System.out.println(assurance1);
+		LocalDate date = LocalDate.parse(assurance1.toString());
+		LocalDate newDate = date.plusMonths(3);
+		java.util.Date dates = java.util.Date.from(newDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		long javaTimes = dates.getTime();
+		Date assurance2 = new Date(javaTimes);
+		System.out.println(assurance2);
+		return this.avionRepository.findByAssuranceGreaterThanAndAssuranceLessThan(assurance1, assurance2);
+	}
 
 	// save avion
 
@@ -106,8 +103,11 @@ public class AvionController {
 		Avion avion = avionRepository.findById(avionId)
 				.orElseThrow(() -> new ResourceNotFoundException("Avion not found for this id :: " + avionId));
 
+		avion.setNumero(avionDetails.getNumero());
+		avion.setMarque(avionDetails.getMarque());
+		avion.setModel(avionDetails.getModel());
 		avion.setAssurance(avionDetails.getAssurance());
-		avion.setdateEntretien(avionDetails.getdateEntretien());
+		avion.setDateEntretien(avionDetails.getDateEntretien());
 		avion.setKm(avionDetails.getKm());
 		final Avion updatedAvion = avionRepository.save(avion);
 		return ResponseEntity.ok(updatedAvion);
