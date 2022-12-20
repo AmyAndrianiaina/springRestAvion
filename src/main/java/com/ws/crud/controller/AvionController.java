@@ -23,7 +23,6 @@ import com.ws.crud.exception.ResourceNotFoundException;
 import com.ws.crud.model.Avion;
 import com.ws.crud.repository.AvionRepository;
 
-@CrossOrigin(origins = { "http://localhost:3000" })
 @CrossOrigin(origins = { "http://localhost" })
 @RestController
 @RequestMapping("/rest/")
