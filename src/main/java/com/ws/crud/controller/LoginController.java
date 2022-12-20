@@ -21,6 +21,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 @CrossOrigin(origins = {"http://localhost:3000"})
+@CrossOrigin(origins = { "http://localhost" })
 @RestController
 public class LoginController {
 	

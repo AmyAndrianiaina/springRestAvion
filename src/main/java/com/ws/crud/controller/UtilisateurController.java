@@ -13,6 +13,8 @@ import com.ws.crud.exception.ResourceNotFoundException;
 import com.ws.crud.model.User;
 import com.ws.crud.repository.UserRepository;
 
+@CrossOrigin(origins = { "http://localhost:3000" })
+@CrossOrigin(origins = { "http://localhost" })
 @RestController
 @RequestMapping("/rest/")
 public class UtilisateurController {
